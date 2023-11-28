@@ -8,12 +8,20 @@ menu();
 initScrollReveal();
 typeWrite(document.querySelector(".typewriter"));
 
+
 hoverChangeExperience(
   ".AICTE",
   `I utilized Blue Prism, an RPA (Robotic Process Automation) Tool, to create process diagrams, process studios, and flowcharts that enabled software robots to perform various actions.`,
   "Robotic Process Automation Virtual Intern",
   "AICTE",
   "Mar 2022 - May 2022 (3 mos)"
+);
+hoverChangeExperience(
+  ".EVE",
+  `Reduced time to render employee attendance data by 40% by implementing an optimised approach. Implemented API integration to streamline CRUD operations on doctor's data, reducing manual data entry time by 60% and eliminating data duplication errors.Plugin Graph for accurately displaying company profit and displayed the work procedure data for admin.`,
+  "FrontEnd Developer Intern",
+  `EVE HealthCare Center`,
+  "May 2023 - Nov 2023 (6 mos)"
 );
 
 hoverChangeExperience(
