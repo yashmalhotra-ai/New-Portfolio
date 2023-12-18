@@ -2,7 +2,130 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Archivo"
+    font-family: "Archivo";
+}
+
+.projectCard {
+    width: 100% !important;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    /* Adjust the alpha value for transparency */
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    /* Adjust the z-index to make sure it appears above other elements */
+}
+
+.card {
+    z-index: 9999;
+    position: absolute;
+    display: flex;
+    border-radius: 15px;
+    background-color: black;
+    padding: 20px;
+    width: 50%;
+    height: 75%;
+    padding: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    border: 1px solid #986dff;
+    box-shadow: 7px 7px 7px;
+    overflow: auto;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+}
+
+.col {
+    display: flex;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    width: 50%;
+    color: white;
+}
+
+.form-group input,
+.form-group textarea {
+    background: transparent;
+    outline: none;
+    padding: 10px 0 10px 20px;
+
+    background-color: #111;
+    border: 2px solid #1f1f1f;
+    color: white;
+    border-radius: 50px;
+    transition: all linear 0.2s;
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
+    border: 2px solid rgba(127, 17, 224, 1);
+    box-shadow: 3px 3px 0 rgba(127, 17, 224, 0.3);
+
+}
+
+.form-group textarea {
+    width: 100%;
+    height: 100px;
+}
+
+.card .row .form-group label {
+    line-height: 40px;
+    margin: 0 0 0 30px;
+    pointer-events: none;
+    font-size: 20px;
+}
+
+.card .row input[type="submit"] {
+    background: transparent;
+    outline: none;
+    padding: 10px 0 10px 20px;
+    border: 2px solid rgba(127, 17, 224, 1);
+    box-shadow: 3px 3px 0 rgba(127, 17, 224, 0.3);
+    border-radius: 50px;
+    padding: 10px;
+    color: white;
+    width: 29%;
+    margin: 15px auto;
+    cursor: pointer;
+    outline: none;
+    background: transparent;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 45px;
+    transition: linear all 0.5s;
+}
+
+.card .row input[type="submit"]:hover {
+    border: 5px solid rgba(127, 17, 224, 1);
+    box-shadow: 3px 3px 0 rgba(127, 17, 224, 1);
+    color: #ffffff;
+    transition: linear all 0.5s;
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bolder;
 }
 
 ::selection {
@@ -381,6 +504,7 @@ header .grid-layout nav .nav-list li a:hover {
     #s-about .grid-layout>div #creator-photo {
         height: 300px
     }
+    
 }
 
 #s-about .grid-layout>div #creator-photo h3 {
@@ -611,11 +735,9 @@ header .grid-layout nav .nav-list li a:hover {
 
 #s-projects .grid-layout #projects {
     margin: 24px 0px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    text-align: left
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 #s-projects .grid-layout #projects .teslabank {
@@ -623,20 +745,18 @@ header .grid-layout nav .nav-list li a:hover {
 }
 
 #s-projects .grid-layout #projects .teslabank:hover {
-    
+
     border: 1px solid #e51d37;
     box-shadow: 1px 1px 3px #e51d37;
     animation: light 5s infinite linear;
 
 }
+
 @keyframes light {
-    50%{
-        transform: scale(1.05) translateX(-10px);
+    50% {
         border: 1px solid rgb(152, 109, 255);
-        box-shadow: 4px 4px 15px rgb(152, 109, 255);
-        
     }
-    
+
 }
 
 #s-projects .grid-layout #projects .naped {
@@ -663,7 +783,7 @@ header .grid-layout nav .nav-list li a:hover {
     background-color: #151515;
     height: auto;
     padding: 32px;
-    margin: 8px;
+    margin: 30px;
     flex-basis: calc(33% - 20px);
     flex-grow: 1;
     border: 1px solid #111;
@@ -888,6 +1008,8 @@ header .grid-layout nav .nav-list li a:hover {
     #s-skills .grid-layout #skills #skills-text {
         min-height: auto
     }
+
+   
 }
 
 #s-skills .grid-layout #skills #skills-text h2 {
@@ -1028,8 +1150,8 @@ footer div {
     margin: 0 auto
 }
 
-.btn-p button{
-    margin:0 auto;
+.btn-p button {
+    margin: 0 auto;
     margin-top: 3rem;
     width: 150px;
     height: 50px;
@@ -1039,9 +1161,9 @@ footer div {
 button {
     height: 50px;
     width: 20%;
-    position: relative ;
+    position: relative;
     background: #444;
-    color:#986dff;
+    color: #986dff;
     text-decoration: none;
     text-transform: uppercase;
     border: none;
@@ -1051,37 +1173,40 @@ button {
     transition: 1s;
     cursor: pointer;
     margin-left: 35px;
-  }
-  .span .btn-P{
+}
+
+.span .btn-P {
     width: 100px;
-    }
-  button:hover {
+}
+
+button:hover {
     letter-spacing: 0.2rem;
     padding: 1.1rem 3.1rem;
     background: var(--clr);
     color: var(--clr);
     box-shadow: 0 0 35px var(--clr);
     animation: box 3s infinite;
-  }
-  
-  button::before {
+}
+
+button::before {
     content: "";
     position: absolute;
     inset: 2px;
     background: #272822;
-  }
-  
-  button span {
+}
+
+button span {
     position: relative;
     z-index: 1;
-  }
-  button i {
+}
+
+button i {
     position: absolute;
     inset: 0;
     display: block;
-  }
-  
-  button i::before {
+}
+
+button i::before {
     content: "";
     position: absolute;
     width: 10px;
@@ -1091,15 +1216,15 @@ button {
     border: 2px solid #986dff;
     background: #272822;
     transition: 0.2s;
-  }
-  
-  button:hover i::before {
+}
+
+button:hover i::before {
     width: 15px;
     left: 20%;
     animation: move 3s infinite;
-  }
-  
-  button i::after {
+}
+
+button i::after {
     content: "";
     position: absolute;
     width: 10px;
@@ -1109,37 +1234,41 @@ button {
     border: 2px solid #986dff;
     background: #272822;
     transition: 0.2s;
-  }
-  
-  button:hover i::after {
+}
+
+button:hover i::after {
     width: 15px;
     left: 80%;
     animation: move 3s infinite;
-  }
-  
-  @keyframes move {
+}
+
+@keyframes move {
     0% {
-      transform: translateX(0);
+        transform: translateX(0);
     }
+
     50% {
-      transform: translateX(5px);
+        transform: translateX(5px);
     }
+
     100% {
-      transform: translateX(0);
+        transform: translateX(0);
     }
-  }
-  
-  @keyframes box {
+}
+
+@keyframes box {
     0% {
-      box-shadow: #986dff;
+        box-shadow: #986dff;
     }
+
     50% {
-      box-shadow: 0 0 25px #986dff;
+        box-shadow: 0 0 25px #986dff;
     }
+
     100% {
-      box-shadow: #27272c;
+        box-shadow: #27272c;
     }
-  }
+}
 
 
 /*# sourceMappingURL=style.css.map */

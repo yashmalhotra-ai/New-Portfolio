@@ -31,9 +31,9 @@
           <li>
             <a href="#s-projects">Projects</a>
           </li>
-          <!-- <li>
-              <a href="#s-services">Serviços</a>
-            </li> -->
+          <li>
+            <a id="Contactme">Contact me</a>
+          </li>
           <li>
             <a href="#s-skills">Skills</a>
           </li>
@@ -59,7 +59,10 @@
 
             <a href="mailto: yashmalhotra8810@gmail.com"><button style="--clr:#0FF0FC"><span>Hire
                   Me</span><i></i></button></a>
+            <a href="/assets/YashMalhotraResume.pdf" download><button style="--clr:#0FF0FC"><span>Resume</span><i></i></button></a>
+
           </div>
+          
 
           <img src="assets/image/logo.svg" alt="logo" onload="SVGInject(this)" id="logo" width="500px" height="500px" />
         </div>
@@ -159,23 +162,65 @@
         </div>
       </div>
     </section>
+    <style>
+      .container {
+        display: flex;
+        /* Align images inside the container horizontally */
+        justify-content: space-around;
+        gap: 10px;
+        margin: 10px;
+      }
+
+      .img {
+        height: 16.6vw;
+        width: 30vw;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: 1px solid #986dff;
+      }
+
+      .img-pixel {
+        background-position: 50% 10%;
+      }
+    </style>
 
     <section id="s-projects">
       <div class="grid-layout">
         <h2 class="delaySmallReveal">Projects<span>{}</span></h2>
         <div id="projects">
-          <article class="intervalCardReveal teslabank">
+          <article class="projectCard intervalCardReveal efront">
+            <h3>SketchingEz App</h3>
+            <p>
+              Implemented resizable Pen and Eraser features for precise drawing control.Introduced 'Download as Image'
+              functionality for users to save their sketches.Enhanced user experience with an 'Undo' feature for
+              effortless mistake correction.
+            </p>
+            <div class="container">
+              <a href="https://sketchingez-devyash.netlify.app/">
+                <div class="img" style="background-image:url('/assets/image/SketchEz.PNG');"></div>
+              </a>
+            </div>
+            <a href="https://sketchingez-devyash.netlify.app/" rel="noopener" target="_blank" id="efront">Live Link
+            </a>
+          </article>
+          <article class="projectCard intervalCardReveal teslabank">
             <h3>Portfolio</h3>
             <p>
               Developed a personal portfolio website which reflects my projects, contact and home section.Reflect my
               journey and frontend skills.
             </p>
+            <div class="container">
+              <a href="#home">
+                <div class="img" style="background-image:url('/assets/image/portfolioImage.PNG');"></div>
+              </a>
+            </div>
 
             <a href="#home" rel="noopener" id="teslabank">Live Link
             </a>
           </article>
 
-          <article class="intervalCardReveal naped">
+          <article class="projectCard intervalCardReveal naped">
             <h3>Tic Tac Toe</h3>
             <p>
               Interactive Gameplay:</strong></i> Users can mark their moves by clicking on the
@@ -183,12 +228,16 @@
               Game State Tracking: The application keeps track of the game's progress, indicating the
               current player's turn, winner, or a draw. <i><strong>Responsive Design:</strong></i>
             </p>
-
+            <div class="container">
+              <a href="https://tictactoeym.netlify.app/">
+                <div class="img" style="background-image:url('/assets/image/tictacToeImage.PNG');"></div>
+              </a>
+            </div>
             <a href="https://tictactoeym.netlify.app/" rel="noopener" target="_blank" id="naped">Live Link
             </a>
           </article>
 
-          <article class="intervalCardReveal efront">
+          <article class="projectCard intervalCardReveal efront">
             <h3>ToDo App</h3>
             <p>
               Built a user-friendly and responsive front-end using Next.js framework and styled with Tailwind CSS,
@@ -198,14 +247,24 @@
               Developed a user-friendly interface for adding, updating, and deleting tasks, allowing users to manage
               their to-do list efficiently.
             </p>
+            <div class="container">
+              <a href="https://to-do-nextjs.netlify.app/">
+                <div class="img" style="background-image:url('/assets/image/ToDoApp.PNG');"></div>
+              </a>
+            </div>
             <a href="https://to-do-nextjs.netlify.app/" rel="noopener" target="_blank" id="efront">Live Link
             </a>
           </article>
-          <article class="intervalCardReveal teslabank">
+          <article class="projectCard intervalCardReveal teslabank">
             <h3>RazerPay Clone Front-End</h3>
             <p>
               Made the frontend interface clone of Razorpay website using tailwind css.
             </p>
+            <div class="container">
+              <a href="https://github.com/yashmalhotra-ai/Razerpay-Clone.git">
+                <div class="img" style="background-image:url('/assets/image/RazorpayClone.jpg');"></div>
+              </a>
+            </div>
 
             <a href="https://github.com/yashmalhotra-ai/Razerpay-Clone.git" rel="noopener" target="_blank"
               id="teslabank">GitHub Link
@@ -299,6 +358,48 @@
         </div>
       </div>
     </section>
+    <style>
+
+    </style>
+    <div class="overlay">
+      <div class="card">
+        <h2 style="align-self: center; color:#986dff">Contact Us</h2>
+        <p class="close-btn" style="color: white;">X</p>
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text">
+            </div>
+            <div class="form-group">
+              <label>Surname</label>
+              <input type="text">
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="form-group">
+              <label>Email</label>
+              <input type="text">
+            </div>
+            <div class="form-group">
+              <label>Phone</label>
+              <input type="text">
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group" style="width: 100%;">
+              <label>Message</label>
+              <textarea style="height: 10vh;"></textarea>
+            </div>
+          </div>
+
+          <div class="col">
+            <input type="submit" value="Submit">
+          </div>
+        </div>
+      </div>
+    </div>
 
     <footer>
       <div class="grid-layout">

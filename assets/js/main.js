@@ -4,6 +4,22 @@ import { typeWrite } from "./typeWrite.js";
 import { hoverChangeDescription } from "./hoverChangeDescription.js";
 import { menu } from "./menu.js";
 
+let Contactme = document.getElementById("Contactme")
+let closebtn = document.querySelector(".close-btn");
+Contactme.addEventListener("click", () => {
+  let card = document.querySelector(".overlay");
+  if (card.style.display === "none" || card.style.display === "") {
+    card.style.display = "flex";
+  } else {
+    card.style.display = "none";
+  }
+});
+
+closebtn.addEventListener("click", () => {
+  let card = document.querySelector(".overlay");
+  card.style.display = "none";
+});
+
 menu();
 initScrollReveal();
 typeWrite(document.querySelector(".typewriter"));
